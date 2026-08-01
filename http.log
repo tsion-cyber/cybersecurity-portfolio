@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2026-07-20-00-58-32
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1784509109.495421	CQKHba3tuo5r07bud3	192.168.56.101	57712	192.168.56.102	80	1	-	-	-	-	1.1	-	-	0	891	200	OK	-	-	(empty)	-	-	-	-	-	-	FMc5DBGFu13iRHJZ1	-	text/html
+1784509110.009831	CQKHba3tuo5r07bud3	192.168.56.101	57712	192.168.56.102	80	2	-	-	-	-	1.1	-	-	0	294	404	Not Found	-	-	(empty)	-	-	-	-	-	-	FniQrB24YtCra9Yp45	-	text/html
+#close	2026-07-20-01-16-28
