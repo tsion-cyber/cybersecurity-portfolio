@@ -1,5 +1,3 @@
-You are right. The version you currently have is **incorrect because the code blocks are not closed**. Use **this one only**. Delete everything in `README.md` and paste this entire version directly.
-
 # Network Threat Monitoring & Practical Traffic Analysis Lab
 
 ## Cybersecurity Portfolio Project
@@ -10,8 +8,6 @@ You are right. The version you currently have is **incorrect because the code bl
 **Primary OS:** Kali Linux
 **Lab Network:** 192.168.56.0/24
 
----
-
 ## Project Overview
 
 This project documents a hands-on cybersecurity lab focused on network threat monitoring, traffic capture, packet analysis, and practical network investigation.
@@ -19,8 +15,6 @@ This project documents a hands-on cybersecurity lab focused on network threat mo
 The lab was conducted in an isolated VirtualBox Host-Only network using Kali Linux, Metasploitable2, pfSense, and a Docker-based DVWA web application.
 
 The project demonstrates practical use of cybersecurity tools to perform network discovery, traffic monitoring, packet capture, HTTP object extraction, session reconstruction, and Indicator of Compromise (IOC) identification.
-
----
 
 ## Learning Objectives
 
@@ -35,8 +29,6 @@ The project demonstrates practical use of cybersecurity tools to perform network
 * Reconstruct suspicious network sessions using TCP stream analysis.
 * Identify and document Indicators of Compromise (IOCs).
 
----
-
 ## Lab Environment
 
 | Role            | Hostname        | IP Address      | Platform             |
@@ -47,7 +39,6 @@ The project demonstrates practical use of cybersecurity tools to perform network
 | Web Application | DVWA            | 127.0.0.1:80    | Docker               |
 | Lab Network     |   -              | 192.168.56.0/24 | VirtualBox Host-Only |
 
----
 
 ## Tools Used
 
@@ -61,8 +52,6 @@ The project demonstrates practical use of cybersecurity tools to perform network
 | ntopng       | Live network traffic monitoring          |
 | NetworkMiner | PCAP artifact and credential extraction  |
 | Docker       | DVWA deployment and container management |
-
----
 
 ## Lab Exercises
 
@@ -84,16 +73,12 @@ The project demonstrates practical use of cybersecurity tools to perform network
 | Q12      | HTTP Object Extraction     | HTTP objects extracted from PCAP                          |
 | Q13      | NetworkMiner PCAP Analysis | Hosts, files, and credentials analyzed                    |
 | Q14      | TCP Stream Analysis        | Suspicious HTTP session reconstructed                     |
-| Q15      | IOC Summary                | IPs, domains, user-agent, and hash information documented |
-
----
 
 ## Key Technical Findings
 
 ### Network Discovery
 
 Nmap was used to scan the isolated `192.168.56.0/24` network and identify available hosts, open ports, running services, and operating system information.
-
 The resulting host and service inventory was saved for further analysis and documentation.
 
 ### Network Monitoring
@@ -101,41 +86,28 @@ The resulting host and service inventory was saved for further analysis and docu
 Zeek was used to monitor network traffic and generate connection and HTTP logs. ntopng was used to visualize network activity, including top network talkers and network protocols.
 
 ### Nmap SYN Scan Detection
-
 tcpdump was used to capture traffic during an Nmap SYN scan. Wireshark was then used to identify the scan signature using the following display filter:
 
-```text
+text
 tcp.flags.syn==1 && tcp.flags.ack==0
-```
-
 This filter isolates TCP SYN packets without the ACK flag and was used to identify the Nmap SYN scan traffic signature.
 
 ### Wireshark Traffic Filtering
-
 The following Wireshark display filters were used during the analysis.
 
 **Host Traffic:**
-
-```text
+text
 ip.addr == 192.168.56.102
-```
-
 Used to isolate all traffic to and from the Metasploitable2 host.
 
 **HTTP Traffic:**
-
-```text
+text
 http
-```
-
 Used to isolate HTTP traffic captured during the lab.
 
 **TCP SYN Scan Traffic:**
-
-```text
+text
 tcp.flags.syn == 1 && tcp.flags.ack == 0
-```
-
 Used to identify TCP SYN packets without the ACK flag.
 
 ### DVWA Traffic Capture
@@ -172,18 +144,14 @@ The investigation documented observed network indicators including:
 
 The identified indicators were documented as observed artifacts and require additional validation before being classified as malicious.
 
----
-
 ## Project Structure
-
-```text
+text
 Network-Threat-Monitoring-Lab/
 - Documentation/
 - Evidence/
 - Reports/
 - Screenshots/
 - README.md
-```
 
 The `Documentation` folder contains Markdown documentation for the individual lab questions.
 
@@ -193,7 +161,6 @@ The `Reports` folder contains the complete Week 2 Cybersecurity Lab Findings Rep
 
 The `Screenshots` folder contains screenshots supporting the lab exercises and findings.
 
----
 
 ## Skills Demonstrated
 
@@ -212,20 +179,14 @@ The `Screenshots` folder contains screenshots supporting the lab exercises and f
 * TCP stream reconstruction
 * IOC identification and documentation
 
----
 
 ## Conclusion
-
 This project demonstrates practical cybersecurity skills in network monitoring and traffic analysis within an isolated lab environment.
 
 The exercises provided hands-on experience with network discovery, packet capture, traffic monitoring, reconnaissance detection, HTTP object extraction, PCAP investigation, TCP session reconstruction, and IOC documentation.
 
 The project also demonstrates the ability to collect technical evidence, analyze network activity, document findings, and organize cybersecurity investigation artifacts in a structured portfolio.
 
----
-
 ## Disclaimer
-
 All testing and analysis documented in this project were performed in an isolated cybersecurity lab environment using systems owned or controlled for educational purposes.
-
 No unauthorized systems or networks were targeted.
